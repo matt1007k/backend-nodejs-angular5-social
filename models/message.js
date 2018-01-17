@@ -5,9 +5,10 @@ var Schema = mongoose.Schema;
 
 var MessageSchema = Schema({
 	text: String,
+	viewed: String,
 	created_at: String,
-	emitter: { type: mongoose.ObjectId, ref: 'User' },
-	receiver: { type: mongoose.ObjectId, ref: 'User' }	
+	emitter: { type: Schema.ObjectId, ref: 'User' },
+	receiver: { type: Schema.ObjectId, ref: 'User' }	
 });
 
 module.exports = mongoose.model('Message', MessageSchema);
